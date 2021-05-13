@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    My Blog
+{% endblock %}
+
+{% block css_files %}
+    <link rel="stylesheet" href="{% static 'blog/index.css' %}">
+{% endblock %}
+
+{% block content %}
+    <section id="welcome">
+        <header>
+            <img src="{% static 'blog/images/me.jpg' %}" alt="Younes - the author of this blog">
+            <h2>Younes's Blog</h2>
+        </header>
+        <p>Hi, I am Younes and I love to blog about tech and the word!</p>
+    </section>
+    <section id="latest-posts">
+        <h2>My latest Thoughts</h2>
+        <ul>
+            <li>
+                <article id="post">
+                    <a href="">
+                        <img src="{% static 'blog/images/mountain.jpg' %}" alt="Mountain hiking">
+                        <div class="post__content">
+                            <h3>Mountain Hiking</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                                Numquam delectus illo totam facilis accusamus officiis sit veritatis nobis debitis vel, 
+                                corporis tenetur, ipsa praesentium magnam nemo magni beatae itaque repellat.
+                            </p>
+                        </div>
+                    </a>
+                </article>
+            </li>
+        </ul>
+    </section>
+    <section id="about">
+        <h2>What I do</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            Delectus nisi distinctio corporis sit adipisci dignissimos aut beatae voluptates voluptas consequatur iste, 
+            excepturi velit obcaecati laudantium modi sunt et id accusantium?
+        </p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            Delectus nisi distinctio corporis sit adipisci dignissimos aut beatae voluptates voluptas consequatur iste, 
+            excepturi velit obcaecati laudantium modi sunt et id accusantium?
+        </p>
+    </section>
+{% endblock %}
