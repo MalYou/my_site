@@ -59,27 +59,6 @@
     flex: 1;
   }
   
-  #post a {
-    text-decoration: none;
-    color: #1d1c1c;
-    display: block;
-    padding: 1rem;
-    border-radius: 0.5rem;
-  }
-
-  #post a:hover,
-  #post a:active
-   {
-    background-color: #390281;
-    color: white;
-  }
-
-  #post img {
-    height: 5rem;
-    width: 5rem;
-    border-radius: 50%;
-  }
-
   #about {
     text-align: center;
     padding: 3rem;

@@ -6,6 +6,7 @@
 {% endblock %}
 
 {% block css_files %}
+    <link rel="stylesheet" href="{% static 'blog/post.css' %}">
     <link rel="stylesheet" href="{% static 'blog/index.css' %}">
 {% endblock %}
 
@@ -20,20 +21,7 @@
     <section id="latest-posts">
         <h2>My latest Thoughts</h2>
         <ul>
-            <li>
-                <article id="post">
-                    <a href="">
-                        <img src="{% static 'blog/images/mountain.jpg' %}" alt="Mountain hiking">
-                        <div class="post__content">
-                            <h3>Mountain Hiking</h3>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                                Numquam delectus illo totam facilis accusamus officiis sit veritatis nobis debitis vel, 
-                                corporis tenetur, ipsa praesentium magnam nemo magni beatae itaque repellat.
-                            </p>
-                        </div>
-                    </a>
-                </article>
-            </li>
+            {% include 'blog/includes/post.html' %}
         </ul>
     </section>
     <section id="about">
