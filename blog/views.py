@@ -7,5 +7,4 @@ def posts(request):
     return render(request, 'blog/posts.html')
 
 def post_detail(request, slug):
-    pass
-
+    return render(request, 'blog/post-detail.html')
