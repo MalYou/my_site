@@ -3,10 +3,10 @@ from django.core import validators
 
 
 class Tag(models.Model):
-    capture = models.CharField(max_length=20)
+    caption = models.CharField(max_length=20)
 
     def __str__(self) -> str:
-        return self.capture
+        return self.caption
 
 
 class Author(models.Model):
