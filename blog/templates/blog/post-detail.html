@@ -30,4 +30,20 @@
             {{ post.content|linebreaks }}
         </p>
     </main>
+    <section id="comment-form">
+        <h2>Enjoying it? Leave a comment</h2>
+        <form action="/posts/{{ post.slug }}/comment" method="POST">
+            {% csrf_token %}
+                {% for field in form %}
+                    <div class="form-control">
+                        {{ field.label_tag }}
+                        {{ field }}
+                        {{ field.errors }}
+                    </div>
+                {% endfor %}
+                <div class="form-button">
+                    <button>Send</button>
+                </div>
+        </form>
+    </section>
 {% endblock %}

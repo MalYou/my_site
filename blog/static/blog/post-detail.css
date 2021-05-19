@@ -64,7 +64,8 @@ ody {
   border-radius: 8px;
 }
 
-main {
+main,
+#comment-form {
   width: 90%;
   max-width: 90rem;
   margin: 3rem auto;
@@ -72,4 +73,73 @@ main {
   padding: 1rem;
   border-radius: 12px;
   box-shadow: 0 2px 8px #00000040;
+}
+
+#comment-form {
+  width: 40%;
+}
+
+#comment-form h2 {
+  text-align: center;
+  font-family: inherit;
+}
+
+.form-control,
+.form-button {
+  margin: 1rem;
+}
+
+.form-control label {
+  font-family: inherit;
+  display: block;
+}
+
+.form-control input,
+.form-control textarea {
+  width: 100%;
+  border-radius: 6px;
+  padding: 0.2rem;
+  border: 1px solid rgb(227, 227, 227);
+}
+
+.form-control input:focus,
+.form-control input:active,
+.form-control textarea:focus,
+.form-control textarea:active
+{
+  outline: none;
+  border-color: #390281;
+}
+
+.errorlist {
+  list-style: none;
+  padding: 0;
+  margin-top: 0.2rem;
+  margin-bottom: 1rem;
+}
+
+.errorlist li {
+  color: rgb(94, 6, 6);
+}
+
+.form-button {
+  text-align: right;
+}
+
+.form-button button {
+  background: #5706c0;
+  color: white;
+  border: none;
+  font-weight: bold;
+  width: 10rem;
+  height: 2.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+
+}
+
+.form-button button:hover,
+.form-button button:active {
+  background: #7c29e9;
+  color: white;
 }
