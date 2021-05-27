@@ -1,5 +1,6 @@
-from django.shortcuts import get_object_or_404, render
-from django.views.generic import ListView, DetailView, View
+from django.shortcuts import get_object_or_404, render, redirect
+from django.views.generic import ListView, View
+from django.contrib import messages
 
 from .models import Post
 from .forms import CommentForm
@@ -23,22 +24,20 @@ class PostsView(ListView):
     ordering = ['-date']
 
 
-class PostView(DetailView):
-    model = Post
-    template_name = 'blog/post-detail.html'
-    context_object_name = 'post'
+class PostView(View):
 
-    def get_context_data(self, **kwargs):
+    def get(self, request, slug):
+        post = get_object_or_404(Post, slug=slug)
+
         form = CommentForm()
+        tags = post.tags.all()
+        context = {
+            'post': post,
+            'tags': tags,
+            'form': form
+        }
 
-        context = super().get_context_data(**kwargs)
-        context['tags'] = self.object.tags.all()
-        context['form']= form
-
-        return context
-
-
-class CommentView(View):
+        return render(request, 'blog/post-detail.html', context)
 
     def post(self, request, slug):
         post = get_object_or_404(Post, slug=slug)
@@ -52,9 +51,11 @@ class CommentView(View):
             comment_form.post = post
             comment_form.save()
 
-            context['form'] = CommentForm()
-            return render(request, 'blog/post-detail.html', context)
+            messages.success(request, 'Your comment is published!')
+
+            return redirect('post_detail', slug=slug)
 
         context['form'] = form
 
+        messages.error(request, 'Please correct your inputs!')
         return render(request, 'blog/post-detail.html', context)

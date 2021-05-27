@@ -46,3 +46,24 @@ h3 {
 #main-navigation h1 a:active {
   color: white;
 }
+
+.messages {
+  list-style: none;
+  padding-left: 0;
+  text-align: center;
+}
+
+.messages li {
+  color: white;
+  margin: 1rem auto;
+  padding: 0.5rem;
+  border-radius: 5px;
+}
+
+.messages li.success {
+  background-color: rgb(8, 97, 24);
+}
+
+.messages li.error {
+  background-color: rgb(125, 8, 8);
+}
