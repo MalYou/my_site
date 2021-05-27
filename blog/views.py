@@ -29,12 +29,11 @@ class PostView(View):
     def get(self, request, slug):
         post = get_object_or_404(Post, slug=slug)
 
-        form = CommentForm()
-        tags = post.tags.all()
         context = {
             'post': post,
-            'tags': tags,
-            'form': form
+            'tags': post.tags.all(),
+            'comments': post.comments.all().order_by('-pk'),
+            'form': CommentForm()
         }
 
         return render(request, 'blog/post-detail.html', context)
@@ -42,8 +41,11 @@ class PostView(View):
     def post(self, request, slug):
         post = get_object_or_404(Post, slug=slug)
         form = CommentForm(request.POST)
+
         context = {
-            'post': post
+            'post': post,
+            'tags': post.tags.all(),
+            'comments': post.comments.all().order_by('-pk')
         }
 
         if form.is_valid():

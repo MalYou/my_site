@@ -65,7 +65,8 @@ ody {
 }
 
 main,
-#comment-form {
+#comment-form,
+#comments {
   width: 90%;
   max-width: 90rem;
   margin: 3rem auto;
@@ -73,6 +74,26 @@ main,
   padding: 1rem;
   border-radius: 12px;
   box-shadow: 0 2px 8px #00000040;
+}
+
+#comments h2 {
+  text-align: center;
+}
+
+#comments article {
+  border: 1px solid rgb(202, 200, 200);
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  position: relative;
+  margin-top: 0.8rem;
+}
+
+#comments address {
+  position: absolute;
+  right: 0.5rem;
+  bottom: 0.2rem;
+  color: #390281;
+  font-size: 0.9rem;
 }
 
 #comment-form,

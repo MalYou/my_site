@@ -30,6 +30,19 @@
             {{ post.content|linebreaks }}
         </p>
     </main>
+    {% if comments %}
+        <section id="comments">
+            <h2>All comments on the post</h2>
+            {% for comment in comments %}
+                <article>
+                    <p>
+                        {{ comment.text }}
+                    </p>
+                    <address>Commented by {{ comment.user_name}}</address>
+                </article>
+            {% endfor %}
+        </section>
+    {% endif %}
     <div id="message">
         {% include 'partials/_message.html' %}
     </div>
