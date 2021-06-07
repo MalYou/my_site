@@ -47,6 +47,10 @@ h3 {
   color: white;
 }
 
+nav a {
+  margin: 0rem 1rem;
+}
+
 .messages {
   list-style: none;
   padding-left: 0;
